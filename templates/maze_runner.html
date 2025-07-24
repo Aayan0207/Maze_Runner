@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="icon" href="static/MazeRunner_icon.jpg" type="image/x-icon">
+        <title>
+            Maze Runner
+        </title> 
+        <link rel="stylesheet" href="../static/maze_runner.css">
+    </head>
+    <body>
+        <div class="form-container">
+        <form action="/" method="post" id="MazeRunner-form">
+          <p style="text-align:center; font-size:30px;"><u><b>Maze Runner</p></u></b>
+          <pre type="text" readonly style="text-align:center; font-size:18px;" id="text_string">{{string}}</pre>
+          <br>
+          <input type="text" name="explored" value="" id="explored" readonly placeholder="Show All Explored Cells">
+          <input type="text" name="diagonal_movement" value="" id="diagonal_movement" readonly placeholder="Allow Diagonal Movement">
+          <br>
+          <br>
+          <div style="display:flex; justify-content:center; gap:40px;">
+          <button type="submit" class="button_design" id="solve"><span class="text">Solve</span></button>
+          <button type="reset" class="button_design" id="reset"><span class="text">Reset</span></button>
+          </div>
+          <br>
+          <br>
+          <div class="grid-container">
+            {% for i in range(20) %}
+                      {% for j in range(20) %}
+                          <input type="text" class="square" name="{{i}}_{{j}}" id="{{i}}_{{j}}" style="background-color:{{answer[i][j]}};cursor:pointer;" value="white" maxlength="1" autocomplete="off" size="1" readonly>
+                      {% endfor %}
+            {% endfor %}
+          </div>
+          <br>
+        </form>
+    </div>
+  <script src="../static/maze_runner.js"></script>
+  </div>
+  </body>
+</html>
