@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, jsonify
 import secrets
 import os
-import maze_runner
+from . import maze_runner
 
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", secrets.token_hex(16))
