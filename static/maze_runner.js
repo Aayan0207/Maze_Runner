@@ -3,11 +3,11 @@ var goalCellSelected = false;
 var isMouseDown = false;
 
 document.addEventListener("DOMContentLoaded", function () {
-  const explore = document.getElementById("explored");
-  const diagonal_movement = document.getElementById("diagonal_movement");
+  const explore = document.querySelector("#explored");
+  const diagonal_movement = document.querySelector("#diagonal_movement");
   const cells = document.querySelectorAll(".square");
-  const message = document.getElementById("text_string");
-  const reset = document.getElementById("reset");
+  const message = document.querySelector("#text_string");
+  const reset = document.querySelector("#reset");
   const form = document.querySelector("#MazeRunner-form");
   form.onsubmit = (event) => {
     event.preventDefault();
